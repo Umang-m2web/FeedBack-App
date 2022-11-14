@@ -7,7 +7,12 @@ import Spinner from './shared/Spinner'
 function FeedBackList() {
   const { feedback, isLoading } = useContext(FeedbackContext)
   if (!isLoading && (!feedback || feedback.length === 0)) {
-    return <p> No FeedBack Yet ! </p>
+    return (
+      <div className="feedback-list">
+        <p> No FeedBack Yet ! </p>
+        <Spinner />
+      </div>
+    )
   }
   return isLoading ? (
     <Spinner />
@@ -20,6 +25,7 @@ function FeedBackList() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            layout
           >
             <FeedBackItem key={item.id} item={item} />
           </motion.div>

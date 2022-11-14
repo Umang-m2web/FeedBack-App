@@ -18,7 +18,13 @@ function App() {
             <Route
               exact
               path="/"
-              element={[<FeedbackForm />, <FeedbackStats />, <FeedBackList />]}
+              element={
+                <>
+                  <FeedbackForm />
+                  <FeedbackStats />
+                  <FeedBackList />
+                </>
+              }
             />
 
             <Route path="/about" element={<AboutPage />} />

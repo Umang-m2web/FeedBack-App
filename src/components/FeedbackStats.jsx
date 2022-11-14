@@ -9,7 +9,7 @@ function FeedbackStats() {
       return acc + cur.rating
     }, 0) / feedback.length
 
-  //average = average.toFixed(1).replace(/[.,]0$/, '')
+  average = average.toFixed(1).replace(/[.,]0$/, '')
   // console.log(average)
   return (
     <div className="feedback-stats">
